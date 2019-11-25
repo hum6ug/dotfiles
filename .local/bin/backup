@@ -1,0 +1,47 @@
+#!/bin/bash
+
+source /home/humbug/.config/restic/environment.sh
+
+notify-send "Restic backup started."
+
+echo "Creating incremental backup ..."
+### Backup new stuff
+restic backup \
+        --verbose \
+	--files-from /home/humbug/.config/restic/backup.files \
+	--exclude-caches \
+	--exclude-if-present '.nobackup' \
+	--cache-dir="$HOME/.cache/restic-home" \
+	--exclude=**/.cache \
+	--exclude=**/.local \
+	--exclude=$HOME/.minikube \
+	--exclude=$HOME/Downloads \
+	--exclude=$HOME/Nextcloud \
+	--exclude=$HOME/tmp \
+	--exclude=$HOME/.gnome \
+	--exclude=$HOME/.icons \
+	--exclude=$HOME/.java \
+	--exclude=$HOME/.m2 \
+	--exclude=$HOME/.gradle \
+	--exclude=$HOME/.oh-my-zsh \
+	--exclude=$HOME/.pki \
+	--exclude=$HOME/.sdkman \
+	--exclude=$HOME/.vim \
+	--exclude=$HOME/.w3m \
+	--exclude=$HOME/.*_history \
+	--exclude=$HOME/.cargo \
+	#--exclude-file /home/humbug/.config/restic/exclude.files
+
+### Remove old stuff
+echo "Deleting old backups ..."
+restic forget \
+        --keep-last 7 \
+        --keep-daily 14 \
+        --keep-weekly 4 \
+        --keep-monthly 6
+
+# restic -r $BACKARCH check
+echo "Don't forget to run \"restic check\" from time to time"
+echo "Backup finished."
+
+notify-send "Restic backup finished."

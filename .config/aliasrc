@@ -25,16 +25,25 @@ alias \
 alias \
 	ka="killall" \
 	g="git" \
+	gua="git remote | xargs -L1 git push --all" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
 	sdn="sudo shutdown -h now" \
+	upc="sudo pacman -Syu; pkill -RTMIN+8 i3blocks" \
+	lsp="pacman -Qett --color=always | less" \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="sudo pacman" \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
-	xq="xbps-query"
+	xq="xbps-query" \
+	SS="sudo systemctl" \
+	x="sxiv -ft *" \
+	unp="unp -U" \
+	vaultAuth="vault auth -method=cert -ca-cert=$VAULT_CACERT -client-cert=$VAULT_USR -client-key=$VAULT_KEY" \
+
+
 
 # This alias is important. It enables the `pauseallmpv` command.
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
