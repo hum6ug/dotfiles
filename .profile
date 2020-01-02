@@ -3,17 +3,13 @@
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
-# Get default LARBS WM from ~/.local/share/larbs/wm
-export LARBSWM="$(cat ~/.local/share/larbs/wm 2>/dev/null)" &&
-	[ "$LARBSWM" = "dwm" ] || export LARBSWM="i3"
-
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
-export STATUSBAR="${LARBSWM}blocks"
+export STATUSBAR="i3blocks"
 
 # ~/ Clean-up:
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
@@ -21,6 +17,12 @@ export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export LESSHISTFILE="-"
 export INPUTRC="$HOME/.config/inputrc"
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
+
+# Work
+source "$HOME/.predic8"
+
+# Gradle
+export GRADLE_HOME="$HOME/.gradle"
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
@@ -38,6 +40,7 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 mpd >/dev/null 2>&1 &
 
 [ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
+[ -f ~/.kube/.kubectl_aliases ] && source ~/.kube/.kubectl_aliases
 
 # Start graphical server on tty1 if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
