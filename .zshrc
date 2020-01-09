@@ -101,6 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+[ -f "$HOME/.kube/.kubectl_aliases" ] && source "$HOME/.kube/.kubectl_aliases"
+
+source <(kubectl completion zsh)
 
 function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
 
