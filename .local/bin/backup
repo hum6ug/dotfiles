@@ -34,7 +34,7 @@ restic backup \
 
 ### Remove old stuff
 echo "Deleting old backups ..."
-restic forget \
+restic forget --prune \
         --keep-last 7 \
         --keep-daily 14 \
         --keep-weekly 4 \

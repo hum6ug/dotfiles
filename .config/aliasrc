@@ -41,7 +41,7 @@ alias \
 	SS="sudo systemctl" \
 	x="sxiv -ft *" \
 	unp="unp -U" \
-	vaultAuth="vault auth -method=cert -ca-cert=$VAULT_CACERT -client-cert=$VAULT_USR -client-key=$VAULT_KEY" \
+	vaultAuth="vault login -method=cert -ca-cert=$VAULT_CACERT -client-cert=$VAULT_USR -client-key=$VAULT_KEY" \
 
 
 
