@@ -107,6 +107,10 @@ source <(kubectl completion zsh)
 
 function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
 
+source /home/humbug/.config/broot/launcher/bash/br
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/humbug/.sdkman"
 [[ -s "/home/humbug/.sdkman/bin/sdkman-init.sh" ]] && source "/home/humbug/.sdkman/bin/sdkman-init.sh"
