@@ -81,4 +81,5 @@ tmp/
 .mitmproxy/
 .pki/
 .vscode-oss/
-
+.local/share/JetBrains/
+.java/
