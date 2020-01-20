@@ -18,6 +18,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
+Plug 'https://github.com/martinda/Jenkinsfile-vim-syntax.git'
 call plug#end()
 
 set bg=light
