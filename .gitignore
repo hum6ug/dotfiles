@@ -83,3 +83,11 @@ tmp/
 .vscode-oss/
 .local/share/JetBrains/
 .java/
+.bash_history
+.config/aerc/accounts.conf
+.config/libreoffice/
+.config/transmission/
+.gem/
+.local/share/ranger/
+.python_history
+stale_outputs_checked
