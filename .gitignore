@@ -91,3 +91,4 @@ tmp/
 .local/share/ranger/
 .python_history
 stale_outputs_checked
+.tig_history
