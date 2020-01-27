@@ -2,6 +2,7 @@
 
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$(ruby -e 'puts Gem.user_dir')/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Default programs:
 export EDITOR="nvim"
