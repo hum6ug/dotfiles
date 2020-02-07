@@ -12,7 +12,9 @@ alias \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
-	ssh="TERM=xterm-color ssh"
+	ssh="TERM=xterm-color ssh" \
+	ipa="ip -br -c a"
+
 
 # Colorize commands when possible.
 alias \
