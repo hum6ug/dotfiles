@@ -19,6 +19,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'https://github.com/martinda/Jenkinsfile-vim-syntax.git'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set bg=light
@@ -34,6 +35,8 @@ set clipboard+=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+	set background=dark
+	colorscheme gruvbox
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
