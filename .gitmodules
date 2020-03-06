@@ -1,0 +1,6 @@
+[submodule "dev/humbug.pw.hugo/themes/LoveIt"]
+	path = dev/humbug.pw.hugo/themes/LoveIt
+	url = https://github.com/hum6ug/LoveIt.git
+[submodule "dev/humbug.pw.hugo/themes/papercss-hugo-theme"]
+	path = dev/humbug.pw.hugo/themes/papercss-hugo-theme
+	url = https://github.com/hum6ug/papercss-hugo-theme.git
